@@ -1,0 +1,1384 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      HB Planejados — Móveis planejados para cozinhas, quartos e banheiros
+    </title>
+    <meta
+      name="description"
+      content="HB Planejados: fabricação de móveis planejados sob medida para cozinhas, quartos e banheiros. Projeto, fabricação e instalação com garantia."
+    />
+    <style>
+      :root {
+        --bg: #faf7f3;
+        --card: #ffffff;
+        --ink: #211d19;
+        --muted: #6e655c;
+        --faint: #9a9084;
+        --line: #e7dfd6;
+        --accent: #a96e3b;
+        --accent-dark: #8a5730;
+        --accent-soft: #f3e7da;
+        --radius: 14px;
+        --shadow: 0 10px 30px rgba(33, 29, 25, 0.08);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.5;
+      }
+      img,
+      svg {
+        display: block;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+        border: 0;
+      }
+      input {
+        font: inherit;
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      .num {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* ---------- header ---------- */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(250, 247, 243, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .hd {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        height: 68px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .logo-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: var(--ink);
+        color: #f5efe7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: 0.5px;
+      }
+      .logo b {
+        font-size: 17px;
+        font-weight: 700;
+        display: block;
+        line-height: 1.1;
+      }
+      .logo span {
+        font-size: 11.5px;
+        color: var(--muted);
+      }
+      .nav {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+      }
+      .nav a {
+        font-size: 14px;
+        color: var(--muted);
+        padding: 8px 12px;
+        border-radius: 999px;
+        transition: 0.2s;
+      }
+      .nav a:hover {
+        color: var(--ink);
+        background: var(--accent-soft);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 11px 22px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.2s;
+        border: 1px solid transparent;
+      }
+      .btn-primary {
+        background: var(--ink);
+        color: #f5efe7;
+      }
+      .btn-primary:hover {
+        background: var(--accent-dark);
+      }
+      .btn-outline {
+        background: transparent;
+        border-color: var(--line);
+        color: var(--ink);
+      }
+      .btn-outline:hover {
+        border-color: var(--ink);
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 40px;
+        align-items: center;
+        padding: 64px 0 48px;
+      }
+      .kick {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--accent-dark);
+        background: var(--accent-soft);
+        padding: 6px 14px;
+        border-radius: 999px;
+      }
+      .kick i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        display: inline-block;
+      }
+      .hero h1 {
+        font-size: clamp(30px, 4.2vw, 44px);
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: -0.5px;
+        margin: 18px 0 14px;
+      }
+      .hero h1 em {
+        font-style: normal;
+        color: var(--accent-dark);
+      }
+      .lead {
+        font-size: 17px;
+        color: var(--muted);
+        max-width: 48ch;
+      }
+      .ctas {
+        display: flex;
+        gap: 12px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+      }
+      .stats {
+        display: flex;
+        gap: 36px;
+        margin-top: 32px;
+        flex-wrap: wrap;
+      }
+      .stat b {
+        font-size: 22px;
+        font-weight: 700;
+        display: block;
+      }
+      .stat span {
+        font-size: 12.5px;
+        color: var(--faint);
+      }
+      .scene {
+        border-radius: var(--radius);
+        background: var(--card);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        padding: 24px;
+      }
+
+      /* ---------- process ---------- */
+      .process {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        padding: 8px 0 40px;
+      }
+      .step {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+        position: relative;
+      }
+      .step b {
+        font-size: 14.5px;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .step p {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .step .n {
+        position: absolute;
+        top: -11px;
+        left: 16px;
+        background: var(--accent);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ---------- sections ---------- */
+      .sec {
+        padding: 56px 0;
+        border-top: 1px solid var(--line);
+      }
+      .sec h2 {
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: -0.3px;
+      }
+      .sec .sub {
+        font-size: 14.5px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .ctrl {
+        display: flex;
+        gap: 12px;
+        margin-top: 22px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .search {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 0 14px;
+        background: var(--card);
+        flex: 1;
+        min-width: 220px;
+        max-width: 340px;
+        color: var(--faint);
+      }
+      .search input {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        height: 42px;
+        width: 100%;
+        font-size: 14.5px;
+        color: var(--ink);
+      }
+      .chips {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .chip {
+        font-size: 13.5px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: var(--card);
+        color: var(--muted);
+        transition: 0.2s;
+      }
+      .chip:hover {
+        border-color: var(--ink);
+        color: var(--ink);
+      }
+      .chip.on {
+        background: var(--ink);
+        color: #f5efe7;
+        border-color: var(--ink);
+      }
+
+      /* ---------- grid produtos ---------- */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: 0.2s;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+      .pic {
+        height: 104px;
+        border-radius: 10px;
+        background: var(--accent-soft);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent-dark);
+        position: relative;
+        overflow: hidden;
+      }
+      .pic img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .crow {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .cname {
+        font-size: 15.5px;
+        font-weight: 600;
+      }
+      .ccat {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--faint);
+        margin-top: 3px;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .price {
+        font-size: 18px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .price small {
+        display: block;
+        font-size: 10.5px;
+        color: var(--faint);
+        font-weight: 500;
+        text-align: right;
+      }
+      .desc {
+        font-size: 13.5px;
+        color: var(--muted);
+        flex: 1;
+      }
+      .add {
+        width: 100%;
+      }
+      .qty {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 4px;
+      }
+      .qty button {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink);
+        transition: 0.2s;
+      }
+      .qty button:hover {
+        background: var(--accent-soft);
+      }
+      .qty b {
+        font-size: 14.5px;
+      }
+
+      /* ---------- orçamento ---------- */
+      .ors {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 16px;
+        margin-top: 20px;
+        align-items: start;
+      }
+      .orow {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .orow .nm {
+        flex: 1;
+        font-size: 14.5px;
+      }
+      .orow .nm small {
+        display: block;
+        font-size: 12.5px;
+        color: var(--faint);
+      }
+      .orow .tt {
+        font-size: 14.5px;
+        font-weight: 700;
+        min-width: 96px;
+        text-align: right;
+      }
+      .summary {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        position: sticky;
+        top: 88px;
+      }
+      .lbl {
+        font-size: 13px;
+        color: var(--faint);
+      }
+      .total {
+        font-size: 30px;
+        font-weight: 700;
+      }
+      .inp {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 0 14px;
+        height: 44px;
+        width: 100%;
+        font-size: 14.5px;
+        outline: 0;
+        background: var(--bg);
+      }
+      .inp:focus {
+        border-color: var(--accent);
+      }
+      .note {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        color: var(--faint);
+      }
+      .note i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #2e9e5b;
+        display: inline-block;
+      }
+      #sent {
+        display: none;
+        font-size: 13.5px;
+        color: #2e9e5b;
+        font-weight: 600;
+      }
+      .empty {
+        padding: 28px 0;
+        font-size: 14.5px;
+        color: var(--faint);
+      }
+
+      /* ---------- sobre / depoimentos ---------- */
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+      }
+      .pcard {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+      }
+      .pcard .ic {
+        width: 42px;
+        height: 42px;
+        border-radius: 11px;
+        background: var(--accent-soft);
+        color: var(--accent-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 14px;
+      }
+      .pcard b {
+        font-size: 15.5px;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .pcard p {
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+      .quotes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 20px;
+      }
+      .qcard {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .qcard p {
+        font-size: 14.5px;
+        color: var(--muted);
+        flex: 1;
+      }
+      .qcard p::before {
+        content: "“";
+        color: var(--accent);
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 0;
+        display: block;
+        margin: 8px 0 2px;
+      }
+      .qcard span {
+        font-size: 13.5px;
+        font-weight: 600;
+      }
+
+      /* ---------- footer ---------- */
+      footer {
+        margin-top: 56px;
+        border-top: 1px solid var(--line);
+        background: var(--card);
+      }
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding: 36px 0 24px;
+      }
+      .fcol {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+      .fcol b {
+        font-size: 13.5px;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .copy {
+        font-size: 12px;
+        color: var(--faint);
+        padding: 0 0 24px;
+      }
+
+      /* ---------- whatsapp flutuante ---------- */
+      .wa {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+        transition: 0.2s;
+        z-index: 60;
+      }
+      .wa:hover {
+        transform: scale(1.08);
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          grid-template-columns: 1fr;
+          padding: 40px 0 32px;
+        }
+        .process,
+        .pillars,
+        .quotes {
+          grid-template-columns: 1fr 1fr;
+        }
+        .ors {
+          grid-template-columns: 1fr;
+        }
+        .nav a:not(.nav-cta) {
+          display: none;
+        }
+        .summary {
+          position: static;
+        }
+      }
+      @media (max-width: 560px) {
+        .process,
+        .pillars,
+        .quotes {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap hd">
+        <a class="logo" href="#top">
+          <div class="logo-mark">
+            <img
+              src="images/logo.png"
+              alt="HB Planejados"
+              style="
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                border-radius: 10px;
+              "
+              onerror="
+                this.remove();
+                this.parentNode.textContent = 'HB';
+              "
+            />
+          </div>
+          <div>
+            <b>HB Planejados</b><span>móveis planejados sob medida</span>
+          </div>
+        </a>
+        <nav class="nav">
+          <a href="#catalogo">Catálogo</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#depo">Depoimentos</a>
+          <a href="#contato">Contato</a>
+          <a
+            class="btn btn-primary nav-cta"
+            href="#orcamento"
+            style="padding: 9px 18px"
+            >Orçamento <span id="navCount" class="num"></span
+          ></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="wrap">
+      <!-- HERO -->
+      <section class="hero">
+        <div>
+          <span class="kick"><i></i>Agenda aberta para novos projetos</span>
+          <h1>
+            Cozinhas, quartos e banheiros <em>planejados sob medida</em> para a
+            sua casa
+          </h1>
+          <p class="lead">
+            A HB Planejados projeta, fabrica e instala móveis planejados que
+            aproveitam cada centímetro do seu espaço — com acabamento premium e
+            garantia real.
+          </p>
+          <div class="ctas">
+            <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
+            <a class="btn btn-outline" href="#orcamento">Montar orçamento</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>12 anos</b><span>de experiência</span></div>
+            <div class="stat"><b>400+</b><span>projetos entregues</span></div>
+            <div class="stat"><b>5 anos</b><span>de garantia</span></div>
+          </div>
+        </div>
+        <div class="scene">
+          <svg
+            viewBox="0 0 340 210"
+            width="100%"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="color: var(--accent-dark)"
+          >
+            <path d="M10 190h320" />
+            <path
+              d="M24 190V96h118v94 M24 126h118 M24 158h118 M82 96v30 M82 126v32"
+            />
+            <path d="M40 108h30 M40 140h30 M96 108h30 M96 140h30" />
+            <path
+              d="M96 108m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0 M40 140m-2 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"
+            />
+            <path d="M158 190v-56h164v56 M158 156h164" />
+            <path d="M170 190v-22h54v22 M236 190v-22h74v22" />
+            <path d="M170 176h54 M236 176h74" />
+            <path d="M170 190v-34h54 M170 173h54" />
+            <path d="M300 190v-96h22v96 M300 118h22" />
+            <path
+              d="M166 112c0-10 8-16 18-16s18 6 18 16 M184 96V82 M184 88c-4 0-6-3-6-6 M184 88c4 0 6-3 6-6"
+            />
+            <circle cx="184" cy="68" r="9" />
+            <path d="M288 96h-46v-14h46 M288 82v14 M265 82v14" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- PROCESSO -->
+      <div class="process">
+        <div class="step">
+          <span class="n">1</span><b>Medição</b>
+          <p>Visita técnica gratuita para medir o ambiente.</p>
+        </div>
+        <div class="step">
+          <span class="n">2</span><b>Projeto 3D</b>
+          <p>Você aprova cada detalhe antes da fabricação.</p>
+        </div>
+        <div class="step">
+          <span class="n">3</span><b>Fabricação</b>
+          <p>Produção própria com materiais de primeira linha.</p>
+        </div>
+        <div class="step">
+          <span class="n">4</span><b>Instalação</b>
+          <p>Montagem limpa e rápida, com garantia de 5 anos.</p>
+        </div>
+      </div>
+
+      <!-- CATÁLOGO -->
+      <section class="sec" id="catalogo">
+        <h2>Catálogo</h2>
+        <p class="sub">
+          Valores de referência — o orçamento final é sob medida, conforme o
+          projeto do seu ambiente.
+        </p>
+        <div class="ctrl">
+          <div class="search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path
+                fill="currentColor"
+                d="M11.5 3C16.1944 3 20 6.80558 20 11.5C20 13.523 19.2933 15.381 18.1132 16.8404L21.1364 19.8636C21.4879 20.2151 21.4879 20.7849 21.1364 21.1364C20.7849 21.4879 20.2151 21.4879 19.8636 21.1364L16.8404 18.1132C15.381 19.2933 13.523 20 11.5 20C6.80558 20 3 16.1944 3 11.5C3 6.80558 6.80558 3 11.5 3ZM11.5 18.2C15.2003 18.2 18.2 15.2003 18.2 11.5C18.2 7.79969 15.2003 4.8 11.5 4.8C7.79969 4.8 4.8 7.79969 4.8 11.5C4.8 15.2003 7.79969 18.2 11.5 18.2Z"
+              />
+            </svg>
+            <input
+              id="q"
+              placeholder="Buscar móvel..."
+              oninput="setQuery(this.value)"
+            />
+          </div>
+          <div class="chips" id="chips"></div>
+        </div>
+        <div class="grid" id="grid"></div>
+      </section>
+
+      <!-- SOBRE -->
+      <section class="sec" id="sobre">
+        <h2>Por que planejados?</h2>
+        <p class="sub">
+          Móveis planejados aproveitam cada centímetro e entregam acabamento que
+          móveis prontos não alcançam.
+        </p>
+        <div class="pillars">
+          <div class="pcard">
+            <div class="ic">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M3 17h18 M5 17V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8 M9 17v2 M15 17v2 M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2 M8.5 11.5h7"
+                />
+              </svg>
+            </div>
+            <b>Aproveitamento total</b>
+            <p>
+              Cada vão, canto e parede é aproveitado. Projetamos para o seu
+              ambiente, não o contrário.
+            </p>
+          </div>
+          <div class="pcard">
+            <div class="ic">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4 7.2 16.9l.9-5.4-3.9-3.8 5.4-.8z"
+                />
+              </svg>
+            </div>
+            <b>Materiais de primeira linha</b>
+            <p>
+              MDF, ferragens e tampos selecionados com rigor, com acabamentos
+              que duram anos.
+            </p>
+          </div>
+          <div class="pcard">
+            <div class="ic">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z M9 12l2 2 4-4.5"
+                />
+              </svg>
+            </div>
+            <b>Garantia de 5 anos</b>
+            <p>
+              Fabricação e instalação próprias, com acompanhamento pós-venda e
+              garantia real.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- DEPOIMENTOS -->
+      <section class="sec" id="depo">
+        <h2>Quem planejou com a HB, recomenda</h2>
+        <div class="quotes">
+          <div class="qcard">
+            <p>
+              Minha cozinha ficou perfeita, aproveitaram até o último cantinho.
+              O projeto 3D ajudou muito na decisão.
+            </p>
+            <span>Juliana M. — São Paulo</span>
+          </div>
+          <div class="qcard">
+            <p>
+              Guarda-roupa e banheiro planejados com acabamento impecável.
+              Equipe pontual e super profissional.
+            </p>
+            <span>Ricardo A. — Guarulhos</span>
+          </div>
+          <div class="qcard">
+            <p>
+              Orçamento justo, prazo cumprido e um resultado que superou o que
+              eu imaginava. Recomendo de olho fechado.
+            </p>
+            <span>Patrícia L. — Osasco</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ORÇAMENTO -->
+      <section class="sec" id="orcamento">
+        <h2>Monte seu orçamento</h2>
+        <p class="sub">
+          Selecione os móveis do catálogo e envie o pedido — retornamos com o
+          projeto e o valor final.
+        </p>
+        <div class="ors">
+          <div id="cartList"></div>
+          <div class="summary">
+            <div>
+              <div class="lbl">Total estimado</div>
+              <div class="total num" id="cartTotal">R$ 0,00</div>
+            </div>
+            <input class="inp" id="cname" placeholder="Seu nome (opcional)" />
+            <input
+              class="inp"
+              id="cphone"
+              placeholder="Seu telefone (opcional)"
+            />
+            <button class="btn btn-primary" id="sendBtn" onclick="sendOrder()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  fill="currentColor"
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                />
+              </svg>
+              Enviar pedido pelo WhatsApp
+            </button>
+            <div class="note"><i></i>Resposta em até 1 dia útil</div>
+            <div id="sent">Abrindo o WhatsApp com o seu pedido...</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- CONTATO / FOOTER -->
+    <footer id="contato">
+      <div class="wrap foot">
+        <div class="fcol">
+          <b>HB Planejados</b><span>Fabricação de móveis planejados</span
+          ><span>para cozinhas, quartos e banheiros</span>
+        </div>
+        <div class="fcol">
+          <b>Endereço</b><span>Rua das Oficinas, 456 — Centro</span
+          ><span>São Paulo — SP</span>
+        </div>
+        <div class="fcol">
+          <b>Horário</b><span>Seg a sex, 8h às 18h</span
+          ><span>Sábado, 8h às 12h</span>
+        </div>
+        <div class="fcol">
+          <b>Contato</b><span>(31) 99991-9029</span
+          ><span>contato@hbplanejados.com.br</span>
+        </div>
+      </div>
+      <div class="wrap copy">
+        © 2026 HB Planejados — Móveis planejados sob medida. Todos os direitos
+        reservados.
+      </div>
+    </footer>
+
+    <!-- WhatsApp flutuante -->
+    <a
+      class="wa"
+      id="waFloat"
+      href="https://wa.me/5531999919029?text=Ol%C3%A1%2C%20HB%20Planejados!%20Quero%20um%20or%C3%A7amento."
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      var WHATS = "5531999919029";
+      var fmt = new Intl.NumberFormat("pt-BR", {
+        style: "currency",
+        currency: "BRL",
+      });
+      var CATS = [
+        { n: "Cozinhas", c: "#A96E3B" },
+        { n: "Quartos", c: "#4E6E8E" },
+        { n: "Banheiros", c: "#3E7C6B" },
+        { n: "Complementos", c: "#8A5A83" },
+      ];
+      var IC = {
+        kitch:
+          '<path d="M3 10h18 M5 10v10 M19 10v10 M5 20h14 M5 15h14 M12 10v5"/><path d="M12 5V3 M8 5a2 2 0 0 1 4 0 M14 5a2 2 0 0 1 4 0"/>',
+        aereo:
+          '<path d="M4 4h16v9H4z M4 8.5h16 M11 4v4.5 M6.5 10.5h1 M16.5 10.5h1"/>',
+        balcao:
+          '<path d="M3 9h18v3H3z M5 12v8 M19 12v8 M9 12v5 M15 12v5 M5 16h14"/>',
+        ilha: '<path d="M4 9h16v3H4z M6 12v7 M18 12v7 M4 19h16 M8 5h8 M12 5v4 M9 9V7h6v2"/>',
+        guarda:
+          '<path d="M4 3h16v18H4z M9.3 3v18 M14.6 3v18 M6.6 12h1 M11.9 12h1 M17.2 12h1"/>',
+        cama: '<path d="M3 18v-6h18v6 M3 18v3 M21 18v3 M3 12V6 M3 9h18 M6 9c0-1.5 1-2 2.5-2S11 7.5 11 9 M3 12h18"/>',
+        criado:
+          '<path d="M5 8h14v11H5z M5 13.5h14 M11 15.5h2 M7 19v2 M17 19v2"/>',
+        closet:
+          '<path d="M4 3h16v18H4z M12 3v18 M4 12h8 M12 8h8 M12 16h8"/><path d="M7.5 5.5l1 1 1.5-1.8"/>',
+        banh: '<path d="M4 5h16v7H4z M4 9h16 M8 5v4 M16 5v4 M6 12v7 M18 12v7 M4 19h16"/>',
+        gab: '<path d="M4 9h16v9H4z M4 13h16 M10 13v5 M14 13v5 M6 18v2 M18 18v2"/><path d="M7 6h10"/>',
+        espelho:
+          '<path d="M7 3h10v13H7z M7 6h10 M7 9.5h10 M7 13h10"/><path d="M12 16v2 M9 21h6 M12 18v3"/>',
+        office:
+          '<path d="M3 8h18v3H3z M5 11v7 M19 11v7 M5 18h14 M9 11v4 M15 11v4 M12 8V4 M9.5 5.5h5"/>',
+      };
+      var PRODUCTS = [
+        {
+          id: 1,
+          img: "images/imagem01.png",
+          n: "Cozinha planejada completa",
+          c: "Cozinhas",
+          p: 8900,
+          d: "Projeto exclusivo com armários aéreos, balcões e gavetas com amortecimento.",
+          ic: "kitch",
+          unit: "projeto",
+        },
+        {
+          id: 2,
+          img: "images/imagem02.png",
+          n: "Armário aéreo de cozinha",
+          c: "Cozinhas",
+          p: 1450,
+          d: "Portas com pistão a gás e interior otimizado para temperos.",
+          ic: "aereo",
+        },
+        {
+          id: 3,
+          img: "images/imagem03.png",
+          n: "Balcão com tampo",
+          c: "Cozinhas",
+          p: 1980,
+          d: "Tampo reforçado com opção de granito ou quartzo.",
+          ic: "balcao",
+        },
+        {
+          id: 4,
+          img: "images/imagem04.png",
+          n: "Ilha gourmet central",
+          c: "Cozinhas",
+          p: 3400,
+          d: "Com espaço para cooktop e balcão de apoio para refeições.",
+          ic: "ilha",
+        },
+        {
+          id: 5,
+          img: "images/imagem05.png",
+          n: "Guarda-roupa planejado",
+          c: "Quartos",
+          p: 2750,
+          d: "Três portas de correr com espelho e divisórias internas sob medida.",
+          ic: "guarda",
+        },
+        {
+          id: 6,
+          img: "images/imagem06.png",
+          n: "Cama com cabeceira estofada",
+          c: "Quartos",
+          p: 1890,
+          d: "Cabeceira com capitonê e estrutura reforçada para colchão queen.",
+          ic: "cama",
+        },
+        {
+          id: 7,
+          img: "images/imagem07.png",
+          n: "Criado-mudo",
+          c: "Quartos",
+          p: 420,
+          d: "Duas gavetas com corrediças telescópicas e acabamento laqueado.",
+          ic: "criado",
+        },
+        {
+          id: 8,
+          img: "images/imagem08.png",
+          n: "Closet aberto com espelho",
+          c: "Quartos",
+          p: 3200,
+          d: "Prateleiras, cabideiros e espelho de corpo inteiro integrado.",
+          ic: "closet",
+        },
+        {
+          id: 9,
+          img: "images/imagem09.png",
+          n: "Banheiro completo planejado",
+          c: "Banheiros",
+          p: 3800,
+          d: "Gabinete, espelho e armários aéreos com marcenaria resistente à umidade.",
+          ic: "banh",
+          unit: "projeto",
+        },
+        {
+          id: 10,
+          img: "images/imagem10.png",
+          n: "Gabinete para banheiro",
+          c: "Banheiros",
+          p: 980,
+          d: "Portas com dobradiças soft-close e acabamento impermeável.",
+          ic: "gab",
+        },
+        {
+          id: 11,
+          img: "images/imagem11.png",
+          n: "Espelho com LED",
+          c: "Banheiros",
+          p: 640,
+          d: "Iluminação em LED quente com interruptor touch embutido.",
+          ic: "espelho",
+        },
+        {
+          id: 12,
+          img: "images/imagem12.png",
+          n: "Home office planejado",
+          c: "Complementos",
+          p: 2300,
+          d: "Mesa ampla com nichos, gavetas e painel para organização de cabos.",
+          ic: "office",
+        },
+      ];
+      var filter = "Tudo",
+        query = "",
+        cart = {};
+      var PLUS =
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M12 6.1c.5 0 .9.4.9.9v4.1H17c.5 0 .9.4.9.9s-.4.9-.9.9h-4.1V17c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-4.1H7c-.5 0-.9-.4-.9-.9s.4-.9.9-.9h4.1V7c0-.5.4-.9.9-.9z"/></svg>';
+      var MINUS =
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path fill="currentColor" d="M17 11.1c.5 0 .9.4.9.9s-.4.9-.9.9H7c-.5 0-.9-.4-.9-.9s.4-.9.9-.9h10z"/></svg>';
+      function iconSvg(k, s) {
+        return (
+          '<svg width="' +
+          (s || 42) +
+          '" height="' +
+          (s || 42) +
+          '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' +
+          IC[k] +
+          "</svg>"
+        );
+      }
+      function catColor(n) {
+        for (var i = 0; i < CATS.length; i++)
+          if (CATS[i].n === n) return CATS[i].c;
+        return "#8A5A83";
+      }
+
+      function renderChips() {
+        var names = ["Tudo"].concat(
+          CATS.map(function (c) {
+            return c.n;
+          }),
+        );
+        document.getElementById("chips").innerHTML = names
+          .map(function (n) {
+            return (
+              '<button class="chip' +
+              (filter === n ? " on" : "") +
+              '" onclick="setFilter(\'' +
+              n +
+              "')\">" +
+              n +
+              "</button>"
+            );
+          })
+          .join("");
+      }
+      function setFilter(n) {
+        filter = n;
+        renderChips();
+        renderGrid();
+      }
+      function setQuery(v) {
+        query = v.toLowerCase();
+        renderGrid();
+      }
+
+      function actionHTML(p) {
+        var q = cart[p.id] || 0;
+        if (!q)
+          return (
+            '<button class="btn btn-primary add" onclick="add(' +
+            p.id +
+            ')">' +
+            PLUS +
+            " Adicionar ao orçamento</button>"
+          );
+        return (
+          '<div class="qty"><button onclick="dec(' +
+          p.id +
+          ')">' +
+          MINUS +
+          "</button><b>" +
+          q +
+          '</b><button onclick="add(' +
+          p.id +
+          ')">' +
+          PLUS +
+          "</button></div>"
+        );
+      }
+      function renderGrid() {
+        var list = PRODUCTS.filter(function (p) {
+          return (
+            (filter === "Tudo" || p.c === filter) &&
+            (!query ||
+              p.n.toLowerCase().indexOf(query) > -1 ||
+              p.d.toLowerCase().indexOf(query) > -1)
+          );
+        });
+        var el = document.getElementById("grid");
+        if (!list.length) {
+          el.innerHTML =
+            '<div class="empty">Nenhum móvel encontrado. Tente outra busca.</div>';
+          return;
+        }
+        el.innerHTML = list
+          .map(function (p) {
+            var imgTag =
+              '<img loading="lazy" src="' +
+              p.img +
+              '" alt="' +
+              p.n +
+              '" onerror="this.remove()">';
+            return (
+              '<article class="card"><div class="pic">' +
+              imgTag +
+              iconSvg(p.ic) +
+              "</div>" +
+              '<div class="crow"><div><div class="cname">' +
+              p.n +
+              "</div>" +
+              '<div class="ccat"><span class="dot" style="background:' +
+              catColor(p.c) +
+              '"></span>' +
+              p.c +
+              "</div></div>" +
+              '<div class="price">' +
+              fmt.format(p.p) +
+              (p.unit ? "<small>por " + p.unit + "</small>" : "") +
+              "</div></div>" +
+              '<div class="desc">' +
+              p.d +
+              "</div>" +
+              actionHTML(p) +
+              "</article>"
+            );
+          })
+          .join("");
+      }
+      function add(id) {
+        cart[id] = (cart[id] || 0) + 1;
+        sync();
+      }
+      function dec(id) {
+        cart[id] = (cart[id] || 0) - 1;
+        if (cart[id] <= 0) delete cart[id];
+        sync();
+      }
+      function sync() {
+        renderGrid();
+        renderCart();
+      }
+
+      function renderCart() {
+        var ids = Object.keys(cart);
+        var count = ids.reduce(function (a, k) {
+          return a + cart[k];
+        }, 0);
+        document.getElementById("navCount").textContent = count
+          ? "(" + count + ")"
+          : "";
+        var list = document.getElementById("cartList");
+        if (!ids.length) {
+          list.innerHTML =
+            '<div class="empty">Seu orçamento está vazio. Adicione móveis pelo catálogo acima.</div>';
+          document.getElementById("cartTotal").textContent = fmt.format(0);
+          var b = document.getElementById("sendBtn");
+          b.disabled = true;
+          b.style.opacity = ".4";
+          return;
+        }
+        var b = document.getElementById("sendBtn");
+        b.disabled = false;
+        b.style.opacity = "1";
+        var total = 0;
+        list.innerHTML = ids
+          .map(function (k) {
+            var p = PRODUCTS.filter(function (x) {
+              return x.id == k;
+            })[0];
+            var sub = p.p * cart[k];
+            total += sub;
+            return (
+              '<div class="orow"><div class="nm">' +
+              p.n +
+              "<small>" +
+              cart[k] +
+              " x " +
+              fmt.format(p.p) +
+              "</small></div>" +
+              '<div class="qty" style="flex:0 0 auto"><button onclick="dec(' +
+              k +
+              ')">' +
+              MINUS +
+              "</button><b>" +
+              cart[k] +
+              '</b><button onclick="add(' +
+              k +
+              ')">' +
+              PLUS +
+              "</button></div>" +
+              '<div class="tt num">' +
+              fmt.format(sub) +
+              "</div></div>"
+            );
+          })
+          .join("");
+        document.getElementById("cartTotal").textContent = fmt.format(total);
+      }
+      function sendOrder() {
+        var ids = Object.keys(cart);
+        if (!ids.length) return;
+        var name = document.getElementById("cname").value.trim();
+        var phone = document.getElementById("cphone").value.trim();
+        var total = 0;
+        var lines = ids.map(function (k) {
+          var p = PRODUCTS.filter(function (x) {
+            return x.id == k;
+          })[0];
+          total += p.p * cart[k];
+          return cart[k] + "x " + p.n;
+        });
+        var msg =
+          "Olá, HB Planejados! Quero um orçamento: " +
+          lines.join(", ") +
+          ". Total estimado: " +
+          fmt.format(total) +
+          ".";
+        if (name) msg += " Meu nome é " + name + ".";
+        if (phone) msg += " Meu telefone: " + phone + ".";
+        document.getElementById("sent").style.display = "block";
+        window.open(
+          "https://wa.me/" + WHATS + "?text=" + encodeURIComponent(msg),
+          "_blank",
+        );
+      }
+      renderChips();
+      renderGrid();
+      renderCart();
+    </script>
+  </body>
+</html>
